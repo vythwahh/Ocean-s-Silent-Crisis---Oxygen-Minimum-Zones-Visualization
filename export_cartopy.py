@@ -79,4 +79,4 @@ for fname, cfg in configs.items():
     plt.tight_layout()
     plt.savefig(f"{fname}.png", dpi=200, bbox_inches="tight")
     plt.close()
-    print(f"✅ Saved: {fname}.png")
+    print(f"Saved: {fname}.png")

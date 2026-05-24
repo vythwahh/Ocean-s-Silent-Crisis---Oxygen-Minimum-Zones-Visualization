@@ -26,8 +26,7 @@ ax.add_feature(cfeature.LAND, facecolor="#d4c9a8", zorder=1)
 ax.add_feature(cfeature.COASTLINE, linewidth=0.6, zorder=2)
 ax.gridlines(draw_labels=True, linewidth=0.3, alpha=0.4, linestyle="--")
 
-# ── Tên đại dương ────────────────────────────────────
-# ── Tên đại dương ────────────────────────────────────
+ 
 ocean_labels = [
     (200, 40,  "NORTH PACIFIC OCEAN"),
     (200, -40, "SOUTH PACIFIC OCEAN"),
@@ -48,7 +47,7 @@ for lon, lat, name in ocean_labels:
         )
     )
 
-# ── Colorbar với plain language ───────────────────────
+ 
 cbar = plt.colorbar(img, ax=ax, orientation="vertical",
                     fraction=0.02, pad=0.02, shrink=0.85)
 cbar.set_label("Dissolved Oxygen (mmol/m³)", fontsize=10)
@@ -57,7 +56,7 @@ cbar.ax.text(1.6, 0.02, "← No oxygen\n   (dead zone)", transform=cbar.ax.trans
 cbar.ax.text(1.6, 0.95, "← Healthy\n   oxygen", transform=cbar.ax.transAxes,
              fontsize=8, color="#1565C0", va="top")
 
-# ── Legend đơn giản ───────────────────────────────────
+ 
 red_patch   = mpatches.Patch(color="#D32F2F", label="No oxygen — marine life cannot survive")
 blue_patch  = mpatches.Patch(color="#4FC3F7", label="Healthy oxygen levels")
 line_patch  = plt.Line2D([0], [0], color="black", lw=1.5,
@@ -71,4 +70,4 @@ ax.set_title("Dissolved Oxygen at 857m — The Most Critical Depth | 2022-11-30"
 plt.tight_layout()
 plt.savefig("cartopy_857m_final.png", dpi=200, bbox_inches="tight")
 plt.show()
-print("✅ Saved: cartopy_857m_final.png")
+print(" Saved: cartopy_857m_final.png")

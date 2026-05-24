@@ -6,13 +6,13 @@ import numpy as np
 import streamlit as st
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
-# ── Page config ──────────────────────────────────────────
+ 
 st.set_page_config(page_title="OMZ Dashboard", layout="wide")
 
 st.title("🌊 Oxygen Minimum Zones Dashboard")
 st.markdown("**Data:** Copernicus Marine Service — Global Ocean BGC Reanalysis | 2022-11-30")
 
-# ── Load data ────────────────────────────────────────────
+ 
 @st.cache_data
 def load_data():
     return xr.open_dataset(
@@ -23,8 +23,8 @@ def load_data():
 ds = load_data()
 depths = [float(d) for d in ds.depth.values]
 
-# ── Sidebar ──────────────────────────────────────────────
-st.sidebar.header("⚙️ Controls")
+ 
+st.sidebar.header("Controls")
 selected_depth = st.sidebar.select_slider(
     "Select depth (m)",
     options=[f"{d:.0f}" for d in depths],
@@ -35,7 +35,7 @@ depth_idx = [f"{d:.0f}" for d in depths].index(selected_depth)
 omz_threshold = st.sidebar.slider("OMZ threshold (mmol/m³)", 20, 120, 60, step=5)
 
 st.sidebar.markdown("---")
-st.sidebar.markdown("### 🦈 Why it matters")
+st.sidebar.markdown("### Why it matters")
 st.sidebar.markdown(
     st.sidebar.markdown(
     "Oxygen Minimum Zones are regions where O₂ drops below **60 mmol/m³**. "
@@ -44,8 +44,8 @@ st.sidebar.markdown(
 )
 )
 
-# ── Row 1: Map ───────────────────────────────────────────
-st.subheader(f"🗺️ Dissolved Oxygen Map — Depth: {selected_depth}m")
+ 
+st.subheader(f"Dissolved Oxygen Map — Depth: {selected_depth}m")
 
 o2_slice = ds["o2"].isel(time=0, depth=depth_idx)
 
@@ -73,11 +73,11 @@ ax1.set_title(f"Depth: {selected_depth}m | OMZ boundary: {omz_threshold} mmol/m�
 st.pyplot(fig1)
 plt.close(fig1)
 
-# ── Row 2: Depth profile + Stats ─────────────────────────
+ 
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.subheader("📉 Depth Profile — 3 Regions")
+    st.subheader("Depth Profile — 3 Regions")
     points = {
         "Eastern Pacific (OMZ)": {"lat": 10.0,  "lon": 250.0, "color": "#D32F2F"},
         "Central Pacific":       {"lat": 0.0,   "lon": 180.0, "color": "#F57C00"},
@@ -101,7 +101,7 @@ with col1:
     plt.close(fig2)
 
 with col2:
-    st.subheader("📊 Stats at selected depth")
+    st.subheader("Stats at selected depth")
     o2_vals = o2_slice.values.flatten()
     o2_vals = o2_vals[~np.isnan(o2_vals)]
 
