@@ -1,4 +1,4 @@
-# 🌊 Ocean's Silent Crisis — Oxygen Minimum Zones Visualization
+# Ocean's Silent Crisis — Oxygen Minimum Zones Visualization
 
 A data visualization project exploring how **Oxygen Minimum Zones (OMZs)** 
 are expanding through the Mesopelagic Zone (200–1000m) of the Pacific Ocean, 
@@ -8,7 +8,7 @@ Submitted to the **[Copernicus Marine Dataviz Challenge 2025](https://events.mar
 
 ---
 
-## 📊 Key Finding
+## Key Finding
 
 > At **857m depth**, 28% of the Pacific Ocean falls below the critical oxygen 
 > threshold — the highest proportion across all measured depths. This is the 
@@ -17,7 +17,8 @@ Submitted to the **[Copernicus Marine Dataviz Challenge 2025](https://events.mar
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
+```
 ├── app.py                  # Interactive Streamlit dashboard
 ├── export_857m_final.py    # Hero map — most critical depth (857m)
 ├── export_cartopy.py       # 3 depth maps (221m, 458m, 947m)
@@ -30,7 +31,7 @@ Submitted to the **[Copernicus Marine Dataviz Challenge 2025](https://events.mar
 └── chart_profile_v2.png    # Depth profile chart
 ---
 
-## 🛠️ Stack
+## Stack
 
 - **Python** — xarray, matplotlib, cartopy, numpy
 - **Streamlit** — interactive dashboard
@@ -41,7 +42,7 @@ Submitted to the **[Copernicus Marine Dataviz Challenge 2025](https://events.mar
 
 ---
 
-## 🚀 Run the Dashboard
+## Run the Dashboard
 
 ```bash
 # Install dependencies
@@ -53,14 +54,14 @@ streamlit run app.py
 
 ---
 
-## 📁 Data
+## Data
 
 Data is not included in this repo due to file size (~29MB).  
 Download from: [Copernicus Marine Data Store](https://atlas.mercator-ocean.fr/s/SkzfKMAazqqFWdx) → folder `08 Oxygen Minimum Zones`
 
 ---
 
-## 📌 Visualization Highlights
+## Visualization Highlights
 
 | Depth | OMZ Coverage | Ecosystem Impact |
 |-------|-------------|-----------------|
