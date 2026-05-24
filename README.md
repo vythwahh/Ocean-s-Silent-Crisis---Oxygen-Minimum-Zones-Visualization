@@ -4,7 +4,7 @@ A data visualization project exploring how **Oxygen Minimum Zones (OMZs)**
 are expanding through the Mesopelagic Zone (200–1000m) of the Pacific Ocean, 
 threatening marine ecosystems and collapsing the ocean's biological carbon pump.
 
-Submitted to the **[Copernicus Marine Dataviz Challenge 2025](https://events.marine.copernicus.eu/ocean-sessions-dataviz-challenge)**.
+Submitted to the **[Copernicus Marine Dataviz Challenge 2026](https://events.marine.copernicus.eu/ocean-sessions-dataviz-challenge)**.
 
 ---
 
